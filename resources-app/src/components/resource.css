@@ -1,0 +1,13 @@
+.btn {
+    color: #000;
+    border: 0;
+    text-decoration: none;
+}
+
+.video:before {
+    content: 'V: '
+}
+
+.demo:before {
+    content: 'D: '
+}
