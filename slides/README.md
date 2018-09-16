@@ -3,7 +3,7 @@
     <h1>Dumb and Smart Components In React.js</h1>
 </div>
 
-<div class="signature">
+<div class="signature"> 
     <div class="author">
         <div class="image">
             <img src="css/imgs/doncho-minkov.jpg"/>
@@ -80,6 +80,9 @@
             </li>
             <li>
                 <a href="#" class="icon email"></a>
+            </li>
+            <li>
+                <a href="#" class="icon www"></a>
             </li>
         </ul>
     </div>
@@ -325,3 +328,26 @@ class TodoApp {
 <br/>
 
 **TODO: ** Insert picture
+
+
+<!-- slide {class="title-slide"} -->
+<div class="title">
+    <h1>Questions</h1>
+</div>
+
+<div class="title">
+	<h2>Dumb and Smart Components In React.js</h2>
+</div>
+
+<div class="signature"> 
+    <div class="author">
+        <div class="image">
+            <img src="css/imgs/doncho-minkov.jpg"/>
+        </div>
+        <div class="text">
+            <strong>Doncho Minkov</strong>
+            <div class="title-name">Senior full-stack developer</div>
+            <div class="company">Software University</div>
+        </div>
+    </div>
+</div>
