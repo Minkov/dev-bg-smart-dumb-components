@@ -6,16 +6,17 @@
 .reveal .title-slide h1 {
     font-size: 2.5em
 }
-.title-slide .signature {
 
-}
+.title-slide .signature {}
 
 .author {
     display: flex;
 }
+
 .author .image {
     height: 200px;
 }
+
 .author .image img {
     border: 0;
     border-radius: 5px;
@@ -27,13 +28,27 @@
     margin-left: 50px;
 }
 
-.author .title-name, .author .company {
+.author .title-name,
+.author .company {
     font-size: 0.7em
 }
 
 .signature .date {
     font-size: 0.7em;
     text-align: right
+}
+
+.reveal .demo-slide h1,
+.reveal .demo-slide h2 {
+    text-align: center;
+}
+
+.reveal .demo-slide h2 {
+    font-size: 1.2em;
+}
+
+.reveal strong {
+    color: #bd2438
 }
 
 .reveal h1 {
@@ -57,26 +72,22 @@
     height: 900px;
 }
 
-.reveal .slides section.title-slide {
+.reveal .slides section.title-slide,
+.reveal .slides section.demo-slide {
     height: auto;
 }
 
-.reveal h1,
-.reveal h2,
-.reveal h3,
-.reveal h4,
-.reveal h5,
-.reveal h6 {
+.reveal .slides h1,
+.reveal .slides h2,
+.reveal .slides h3,
+.reveal .slides h4,
+.reveal .slides h5,
+.reveal .slides h6 {
     font-family: 'Oswald', sans-serif !important;
 }
 
 .reveal .slides {
     text-align: left;
-}
-
-.reveal pre {
-    display: inline-block;
-    width: auto;
 }
 
 .reveal pre code {

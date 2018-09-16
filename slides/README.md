@@ -102,7 +102,6 @@ The lego pieces...
 <!-- slide } -->
 # Functional Components
 
-<div style="display: flex;align-items: flex-start; justify-content: space-around">
 ```jsx
 const Todo = (props) => (
 	<label>
@@ -135,7 +134,6 @@ const Todo = (props) => (
 <!-- slide -->
 # Class Components
 
-<div style="display: flex;align-items: flex-start; justify-content: space-around">
 ```jsx
 class TodoApp extends Component {
 	constructor(props) {
@@ -148,6 +146,7 @@ class TodoApp extends Component {
 	}
 }
 ```
+
 <ul>
 	<li class="fragment fade-in">
 		Contain the state
@@ -160,10 +159,10 @@ class TodoApp extends Component {
 	</li>
 </ul>
 
-<!-- slide -->
+<!-- slide {class="demo-slide"}-->
 # Demo
+## Create a simple listing of elements
 
-**TODO**
 
 <!-- slide -->
 
@@ -173,82 +172,81 @@ class TodoApp extends Component {
 - Nothing is reusable
 
 <!-- slide -->
-# Dumb and Smart Components
 
 <div class="compare">
-    <div class="line fragment fade-in">
-        <h3 class="title fragment fade-in">Dumb Components</h3>
-        <h3 class="title fragment fade-in">Smart Components</h3>
+    <div class="line">
+        <h3 class="title">Dumb Components</h3>
+        <h3 class="title">Smart Components</h3>
     </div>
     <div class="line fragment fade-in">
         <div>
             <div class="fragment fade-in">
-                The "pretties"
+                The **pretties**
             </div>
         </div>
         <div>
             <div class="fragment fade-in">
-                The "brains"
-            </div>
-        </div>
-    </div>
-    <div class="line fragment fade-in">
-        <div>
-            <div class="fragment fade-in">
-                How to present
-            </div>
-        </div>
-        <div>
-            <div class="fragment fade-in">
-                What to present
+                The **brains**
             </div>
         </div>
     </div>
     <div class="line fragment fade-in">
         <div>
             <div class="fragment fade-in">
-                Do not run any business logic
+                **How** to present
             </div>
         </div>
         <div>
             <div class="fragment fade-in">
-                Do the stuff
-            </div>
-        </div>
-    </div>
-    <div class="line fragment fade-in">
-        <div>
-            <div class="fragment fade-in">
-                Contain only dumb
-            </div>
-        </div>
-        <div>
-            <div class="fragment fade-in">
-                Contain smart and dumb
+                **What** to present
             </div>
         </div>
     </div>
     <div class="line fragment fade-in">
         <div>
             <div class="fragment fade-in">
-                Have only props
+                Run only **UI logic**
             </div>
         </div>
         <div>
             <div class="fragment fade-in">
-                Have props and the state
+                Run **business logic**
             </div>
         </div>
     </div>
     <div class="line fragment fade-in">
         <div>
             <div class="fragment fade-in">
-                Functional
+                Have only **props** and **view state**
             </div>
         </div>
         <div>
             <div class="fragment fade-in">
-                Class
+                Have only **data state**
+            </div>
+        </div>
+    </div>
+    <div class="line fragment fade-in">
+        <div>
+            <div class="fragment fade-in">
+                **Reusable** from other components
+            </div>
+        </div>
+        <div>
+            <div class="fragment fade-in">
+                **Reuse** dumb components
+            </div>
+        </div>
+    </div>
+    <div class="line fragment fade-in">
+        <div>
+            <div class="fragment fade-in">
+                Known as **Presentational**
+            </div>
+        </div>
+        <div>
+            <div class="fragment fade-in">
+                Known as **Containers**
             </div>
         </div>
     </div>
@@ -256,4 +254,74 @@ class TodoApp extends Component {
 
 <!-- slide -->
 
-# Creating Dumb
+# The Dumb Component
+
+- In most cases Dumb components are functional components
+  - Except when holding UI state or lifecycle handlers
+- They have no control over the data
+  - They only visualize data and call callbacks from `props`
+
+```jsx
+const Todo = ({id, isDone, text, onChange}) =>
+	<label>
+		<input type="checkbox" value={id} checked={isDone} onChange={onChange} />
+		<span>
+			{text}
+		</span>
+	</label>;
+```
+
+```jsx
+const TodosList = ({todos, onTodoStateChanged}) =>
+	<ul className="list">
+		{todos.map(todo => <Todo {...todo} onChange={onTodoStateChanged} />)}
+	</ul>;
+```
+
+<!-- slide -->
+
+# The Smart Component
+
+- Smart components are always classes
+- They control the application
+  - Show other components and stuff
+- They do not contain HTML tags
+  - Except `div`s for wrapping other components
+
+```jsx
+class TodoApp {
+	state = {
+		todos: []
+	}
+
+	/** fetch todos */
+
+	handleTodoStateChanged(todo) {
+		/* handle it */
+	}
+
+	render() {
+		const { todos } = this.state;
+		return (
+			<div>
+				<SiderBar />
+				<TodosList
+					todos={todos}
+					onTodoStateChanged={this.handleTodoStateChanged} />
+			</div>
+		)
+	}
+}
+```
+
+<!-- slide -->
+# Demo
+
+- Creating application using the Dumb Smart principle
+  1. List resources
+  2. When a resource is clicked, show it in full screen
+  3. When is full screen, show prev/next buttons
+
+<br/>
+
+**TODO: ** Insert picture
