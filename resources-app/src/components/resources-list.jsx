@@ -1,11 +1,10 @@
 import React from 'react';
 import { func, arrayOf, shape } from 'prop-types';
 import Resource from './resource';
-import './resources-list.css';
 
 const ResourcesList = ({ resources, handleResourceClick }) => (
     <div>
-        <ul className="list">
+        <ul className="list resources-list">
             {
                 resources.map(resource => (
                     <li

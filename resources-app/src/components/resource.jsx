@@ -1,8 +1,7 @@
 import React from 'react';
 import { func, number, string } from 'prop-types';
-import './resource.css';
 
-const Resource = ({ id, title, resourceType, link, handleResourceClick }) => (
+const Resource = ({ id, title, resourceType, handleResourceClick }) => (
     <button
       type="button"
       className={`btn btn-resource ${resourceType}`}
@@ -17,7 +16,6 @@ Resource.propTypes = {
     id: number.isRequired,
     title: string.isRequired,
     resourceType: string.isRequired,
-    link: string.isRequired,
     handleResourceClick: func.isRequired,
 };
 

@@ -3,8 +3,6 @@ import { func, shape } from 'prop-types';
 import ResourceInSlider from './resource-in-slider';
 import SliderButton from './slider-button';
 
-import './resources-slider.css';
-
 const isOverlay = el => el.className.includes('overlay');
 
 const ResourcesSlider = ({ resource, onClose, handlePrev, handleNext }) => (
