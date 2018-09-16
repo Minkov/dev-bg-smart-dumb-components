@@ -1,0 +1,113 @@
+.reveal h1 {
+    color: #bd2438;
+    font-size: 2em
+}
+
+.reveal h2 {
+    font-size: 1.7em;
+}
+
+.reveal .slides * {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+.reveal .slides .slide {
+    height: 900px;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+    font-family: 'Oswald', sans-serif !important;
+}
+
+.reveal .slides {
+    text-align: left;
+}
+
+.slide-columns {
+    display: flex;
+}
+
+.columns-3 .column-1 {
+    width: 33.3%;
+}
+
+.columns-3 .column-2 {
+    width: 66.6%;
+}
+
+.compare .line {
+    display: flex;
+}
+
+.compare .line > * {
+    width: 50%;
+    padding-top: 35px;
+}
+
+.compare .line > *:nth-child(1) {
+    text-align: right;
+    padding-right: 30px;
+    border-right: 3px solid #bd2438;
+}
+
+.compare .line > *:nth-child(2) {
+    text-align: left;
+    padding-left: 30px;
+    border-left: 3px solid #bd2438;
+}
+
+
+.compare .line > .title:nth-child(1) {
+    text-align: right;
+    padding-right: 33px;
+    border-right: 0;
+}
+
+.compare .line > .title:nth-child(2) {
+    text-align: left;
+    padding-left: 33px;
+    border-left: 0
+}
+
+
+
+.icon {
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    background-size: 100%;
+}
+
+.icon:hover:after {
+    content: '';
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 70px;
+    height: 70px;
+    display: block;
+    border-radius: 3px;
+}
+
+.icon.leetcode {
+    background-image: url(/imgs/leetcode.png)
+}
+
+.icon.github {
+    background-image: url(/imgs/github.svg)
+}
+
+.icon.hackerrank {
+    background-image: url(/imgs/hackerrank.png)
+}
+
+.icon.email {
+    background-image: url(/imgs/email.svg)
+}
+
+.icon.linkedin {
+    background-image: url(/imgs/linkedin.svg)
+}
