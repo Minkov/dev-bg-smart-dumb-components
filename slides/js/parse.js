@@ -1,5 +1,5 @@
 const getMarkdown = async () => {
-    const markdownUrl = '/README.md';
+    const markdownUrl = 'README.md';
     const res = await fetch(markdownUrl);
     return res.text();
 }
