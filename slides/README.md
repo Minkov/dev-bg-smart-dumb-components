@@ -1,6 +1,23 @@
 <!-- slide {class="title-slide"} -->
-# Dumb and Smart Components
-## In React.js
+<div class="title">
+    <h1>Dumb and Smart Components In React.js</h1>
+</div>
+
+<div class="signature">
+    <div class="author">
+        <div class="image">
+            <img src="css/imgs/doncho-minkov.jpg"/>
+        </div>
+        <div class="text">
+            <strong>Doncho Minkov</strong>
+            <div class="title-name">Senior full-stack developer</div>
+            <div class="company">Software University</div>
+        </div>
+    </div>
+    <div class="date">
+        19-Sep-2018
+    </div>
+</div>
 
 <!-- slide {class="who-am-i" style=""} -->
 # Who am I?
@@ -46,7 +63,7 @@
     </div>
     <div style="position: absolute; top: 10px; right: 100px; width: 35%">
         <div style="text-align: center">
-            <img src="https://raw.githubusercontent.com/Minkov/reactivex-android-seminar/master/imgs/doncho-minkov.jpeg" style="width: 100%; border: 0; border-radius: 5px;"/>
+            <img src="css/imgs/doncho-minkov.jpg" style="width: 100%; border: 0; border-radius: 5px;"/>
         </div>
         <ul style="list-style-type: none; margin: 0; padding: 0; display: flex; justify-content:space-between">
             <li>
@@ -86,7 +103,7 @@ The lego pieces...
 # Functional Components
 <div class="slide-columns columns-3">
     <div class="column-1">
-        <pre><code class="lang-js hljs javascript">const Todo = (props) => (
+        <pre><code class="lang-js hljs javascript" data-trim>const Todo = (props) => (
     <label>
       <input type="checkbox"
         value={props.todo.id} 

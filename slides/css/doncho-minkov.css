@@ -1,3 +1,41 @@
+.title-slide .title {
+    display: flex;
+    align-items: center;
+}
+
+.reveal .title-slide h1 {
+    font-size: 2.5em
+}
+.title-slide .signature {
+
+}
+
+.author {
+    display: flex;
+}
+.author .image {
+    height: 200px;
+}
+.author .image img {
+    border: 0;
+    border-radius: 5px;
+}
+
+.author .text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+.author .title-name, .author .company {
+    font-size: 0.7em
+}
+
+.signature .date {
+    font-size: 0.7em;
+    text-align: right
+}
+
 .reveal h1 {
     color: #bd2438;
     font-size: 2em
@@ -11,7 +49,7 @@
     font-family: 'Open Sans', sans-serif !important;
 }
 
-.reveal .slides .slide {
+.reveal .slides section {
     height: 900px;
 }
 
@@ -44,31 +82,31 @@
     display: flex;
 }
 
-.compare .line > * {
+.compare .line>* {
     width: 50%;
     padding-top: 35px;
 }
 
-.compare .line > *:nth-child(1) {
+.compare .line>*:nth-child(1) {
     text-align: right;
     padding-right: 30px;
     border-right: 3px solid #bd2438;
 }
 
-.compare .line > *:nth-child(2) {
+.compare .line>*:nth-child(2) {
     text-align: left;
     padding-left: 30px;
     border-left: 3px solid #bd2438;
 }
 
 
-.compare .line > .title:nth-child(1) {
+.compare .line>.title:nth-child(1) {
     text-align: right;
     padding-right: 33px;
     border-right: 0;
 }
 
-.compare .line > .title:nth-child(2) {
+.compare .line>.title:nth-child(2) {
     text-align: left;
     padding-left: 33px;
     border-left: 0

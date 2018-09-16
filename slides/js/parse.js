@@ -42,7 +42,7 @@ const parseToSlides = (markdown) => {
 };
 
 const toSlideComponent = (slide) => {
-    const {
+    let {
         lines,
         attributes
     } = slide  ;
@@ -50,7 +50,7 @@ const toSlideComponent = (slide) => {
     const content = lines.join('\n');
 
     return `
-<section class="slide" ${attributes} data-markdown>
+<section ${attributes} data-markdown>
     <script type="text/slide">
         ${content}
     </script>
