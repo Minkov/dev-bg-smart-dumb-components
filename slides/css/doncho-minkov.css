@@ -94,6 +94,10 @@
     padding: 25px 25px;
 }
 
+.reveal .controls .controls-arrow:before, .reveal .controls .controls-arrow:after {
+    background-color: #bd2438
+}
+
 .slide-columns {
     display: flex;
 }
@@ -139,8 +143,6 @@
     padding-left: 33px;
     border-left: 0
 }
-
-
 
 .icon {
     width: 70px;
