@@ -2,7 +2,7 @@ import React from 'react';
 import { func, arrayOf, shape } from 'prop-types';
 import Resource from './resource';
 
-const ResourcesList = ({ resources, handleResourceClick }) => (
+const ResourcesList = ({ resources, onResourceClick }) => (
     <div>
         <ul className="list resources-list">
             {
@@ -13,7 +13,7 @@ const ResourcesList = ({ resources, handleResourceClick }) => (
                     >
                         <Resource
                           {...resource}
-                          handleResourceClick={handleResourceClick}
+                          onResourceClick={onResourceClick}
                         />
                     </li>
                 ))
@@ -24,7 +24,7 @@ const ResourcesList = ({ resources, handleResourceClick }) => (
 
 ResourcesList.propTypes = {
     resources: arrayOf(shape()).isRequired,
-    handleResourceClick: func.isRequired,
+    onResourceClick: func.isRequired,
 };
 
 export default ResourcesList;

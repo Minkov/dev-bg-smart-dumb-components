@@ -14,7 +14,7 @@ const resources = [ {
     id: 3,
     title: 'Resources App demo',
     link: 'https://github.com/Minkov/dev-bg-smart-dumb-components',
-    type: 'demo',
+    type: 'slides',
 },
 {
     id: 4,

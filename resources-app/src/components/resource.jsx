@@ -1,12 +1,12 @@
 import React from 'react';
 import { func, number, string } from 'prop-types';
 
-const Resource = ({ id, title, resourceType, handleResourceClick }) => (
+const Resource = ({ id, title, type, onResourceClick }) => (
     <button
       type="button"
-      className={`btn btn-resource ${resourceType}`}
+      className={`btn resource ${type}`}
       href="#"
-      onClick={() => handleResourceClick(id)}
+      onClick={() => onResourceClick(id)}
     >
         {title}
     </button>
@@ -15,8 +15,8 @@ const Resource = ({ id, title, resourceType, handleResourceClick }) => (
 Resource.propTypes = {
     id: number.isRequired,
     title: string.isRequired,
-    resourceType: string.isRequired,
-    handleResourceClick: func.isRequired,
+    type: string.isRequired,
+    onResourceClick: func.isRequired,
 };
 
 export default Resource;

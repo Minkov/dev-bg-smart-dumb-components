@@ -38,21 +38,17 @@ class ResourcesApp extends Component {
     async handlePrev(event) {
         event.preventDefault();
         let { currentResource, prevResource, nextResource } = this.state;
-        console.log({ currentResource, prevResource, nextResource });
         [ currentResource, nextResource ] = [ prevResource, currentResource ];
         prevResource = await this.service.getPrevResource(currentResource);
         this.setState({ currentResource, prevResource, nextResource });
-        console.log(currentResource);
     }
 
     async handleNext(event) {
         event.preventDefault();
         let { currentResource, prevResource, nextResource } = this.state;
-        console.log({ currentResource, prevResource, nextResource });
         [ prevResource, currentResource ] = [ currentResource, nextResource ];
         nextResource = await this.service.getNextResource(currentResource);
         this.setState({ currentResource, prevResource, nextResource });
-        console.log(currentResource);
     }
 
     renderList() {
@@ -60,7 +56,7 @@ class ResourcesApp extends Component {
 
         return (
             <ResourcesList
-              handleResourceClick={this.handleResourceClick}
+              onResourceClick={this.handleResourceClick}
               resources={resources}
             />
         );

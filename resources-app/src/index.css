@@ -56,16 +56,34 @@ body {
   cursor: pointer;
 }
 
-
-
-.video:before {
-  content: 'V: '
+.resource {
+  padding-left: 35px;
+  position: relative;
+  height: 30px;
 }
 
-.demo:before {
-  content: 'D: '
+.resource:before {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-size: 30px 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
+.resource.video:before {
+  background-image: url('/icons/video.svg');
+}
+
+.resource.slides:before {
+  background-image: url('/icons/slides.svg');
+}
+
+.resource.demo:before {
+  background-image: url('/icons/demo.svg');
+}
 
 .resources-list .list-item {
   
