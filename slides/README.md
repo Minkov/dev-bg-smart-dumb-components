@@ -99,69 +99,66 @@
 **TODO**
 The lego pieces...
 
-<!-- slide -->
+<!-- slide } -->
 # Functional Components
-<div class="slide-columns columns-3">
-    <div class="column-1">
-        <pre><code class="lang-js hljs javascript" data-trim>const Todo = (props) => (
-    <label>
-      <input type="checkbox"
-        value={props.todo.id} 
-        checked={props.todo.isDone}  
-      />
-      <span>{props.todo.text}</span>
-    </label>
-);</code></pre>
-    </div>
-    <div class="column-2">
-        <li class="fragment fade-in">
-           Return XML
-        </li>
-        <li class="fragment fade-in">
-          Use only props
-        </li>
-        <li class="fragment fade-in">
-           Can contain other components
-        </li>
-        <li class="fragment fade-in">
-            Like tags in HTML
-        </li>
-    </div>
-</div>
+
+<div style="display: flex;align-items: flex-start; justify-content: space-around">
+```jsx
+const Todo = (props) => (
+	<label>
+		<input
+			type="checkbox"
+			value={props.todo.id}
+			checked={props.todo.isDone}
+		/>
+		<span>
+			{props.todo.text}
+		</span>
+	</label>
+);
+```
+<ul>
+	<li class="fragment fade-in">
+		Return XML
+    </li>
+    <li class="fragment fade-in">
+        Use only props
+    </li>
+    <li class="fragment fade-in">
+        Can contain other components
+    </li>
+    <li class="fragment fade-in">
+        Like tags in HTML
+    </li>
+</ul>
 
 <!-- slide -->
-
 # Class Components
 
-<div class="slide-columns columns-3">
-    <div class="column-1">
-        <pre><code class="lang-js hljs javascript">class TodoApp extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { todos: []};
-  }
-  render() {
-    return ( /* some code */)
-  }
-}</code></pre>
-    </div>
-    <div class="column-2">
-        <ul>
-            <li class="fragment fade-in">
-                JavaScript classes
-            </li>
-            <li class="fragment fade-in">
-                Contain the state
-            </li>
-            <li class="fragment fade-in">
-                Can contain other components
-            </li>
-            <li class="fragment fade-in">
-                Like tags in HTML, but with behavior
-            </li>
-        </ul>
-    </div>
-</div>
+<div style="display: flex;align-items: flex-start; justify-content: space-around">
+```jsx
+class TodoApp extends Component {
+	constructor(props) {
+		super(props);
+		this.state = { todos: []};
+	}
+  
+	render() {
+		return ( /* some code */)
+	}
+}
+```
+<ul>
+	<li class="fragment fade-in">
+		Contain the state
+	</li>
+	<li class="fragment fade-in">
+		Can contain other components
+	</li>
+	<li class="fragment fade-in">
+		Like tags in HTML, but with behavior
+	</li>
+</ul>
 
 <!-- slide -->
 # Demo
@@ -256,3 +253,7 @@ The lego pieces...
         </div>
     </div>
 </div>
+
+<!-- slide -->
+
+# Creating Dumb

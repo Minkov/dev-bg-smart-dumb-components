@@ -49,8 +49,16 @@
     font-family: 'Open Sans', sans-serif !important;
 }
 
+.reveal .slides code {
+    font-family: 'Consolas' !important;
+}
+
 .reveal .slides section {
     height: 900px;
+}
+
+.reveal .slides section.title-slide {
+    height: auto;
 }
 
 .reveal h1,
@@ -64,6 +72,15 @@
 
 .reveal .slides {
     text-align: left;
+}
+
+.reveal pre {
+    display: inline-block;
+    width: auto;
+}
+
+.reveal pre code {
+    padding: 25px 25px;
 }
 
 .slide-columns {
