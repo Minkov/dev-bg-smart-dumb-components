@@ -98,6 +98,14 @@
     background-color: #bd2438
 }
 
+.reveal .who-am-i ul li {
+    margin-top: 5px;
+}
+
+.reveal ul li {
+    margin-top: 15px;
+}
+
 .slide-columns {
     display: flex;
 }

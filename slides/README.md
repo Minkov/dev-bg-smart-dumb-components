@@ -101,11 +101,13 @@
 **TODO**
 The lego pieces...
 
-<!-- slide } -->
-# Functional Components
+<!-- slide -->
+# React Components
 
-```jsx
-const Todo = (props) => (
+<h5 class=" fragment fade-in">Function Components</h5>
+<div class="slide-columns columns-3 fragment fade-in">
+	<div class="column-1">
+		<pre><code data-no-escape>const Todo = (props) => (
 	<label>
 		<input
 			type="checkbox"
@@ -116,28 +118,30 @@ const Todo = (props) => (
 			{props.todo.text}
 		</span>
 	</label>
-);
-```
-<ul>
-	<li class="fragment fade-in">
-		Return XML
-    </li>
-    <li class="fragment fade-in">
-        Use only props
-    </li>
-    <li class="fragment fade-in">
-        Can contain other components
-    </li>
-    <li class="fragment fade-in">
-        Like tags in HTML
-    </li>
-</ul>
+);</code></pre>
+</div>
+<div class="column-2">
+	<ul>
+		<li class="fragment fade-in">
+			Return only XML
+		</li>
+		<li class="fragment fade-in">
+	        Use only props
+		</li>
+		<li class="fragment fade-in">
+	        Can contain other components
+		</li>
+		<li class="fragment fade-in">
+	        Like tags in HTML
+		</li>
+	</ul>
+</div>
+</div>
 
-<!-- slide -->
-# Class Components
-
-```jsx
-class TodoApp extends Component {
+<h5 class="fragment fade-in">Class Components</h5>
+<div class="slide-columns columns-3  fragment fade-in">
+	<div class="column-1">
+		<pre><code>class TodoApp extends Component {
 	constructor(props) {
 		super(props);
 		this.state = { todos: []};
@@ -146,20 +150,25 @@ class TodoApp extends Component {
 	render() {
 		return ( /* some code */)
 	}
-}
-```
-
-<ul>
-	<li class="fragment fade-in">
-		Contain the state
-	</li>
-	<li class="fragment fade-in">
-		Can contain other components
-	</li>
-	<li class="fragment fade-in">
-		Like tags in HTML, but with behavior
-	</li>
-</ul>
+}</code></pre>
+</div>
+<div class="column-2">
+	<ul>
+		<li class="fragment fade-in">
+			Return XML and have behavior
+		</li>
+		<li class="fragment fade-in">
+			Contain the state
+		</li>
+		<li class="fragment fade-in">
+			Can contain other components
+		</li>
+		<li class="fragment fade-in">
+			Like tags in HTML, but with behavior
+		</li>
+	</ul>
+</div>
+</div>
 
 <!-- slide {class="demo-slide"}-->
 # Demo
@@ -173,7 +182,7 @@ class TodoApp extends Component {
 - Lots of repeating code
 - Nothing is reusable
 
-<!-- slide -->
+<!-- slide {class="demo-slide"}-->
 # Dumb and Smart Components
 
 <!-- slide -->
@@ -189,7 +198,7 @@ class TodoApp extends Component {
         <h3 class="title">Dumb Components</h3>
         <h3 class="title">Smart Components</h3>
     </div>
-    <div class="line fragment fade-in">
+    <div class="line">
         <div>
             <div class="fragment fade-in">
                 The **pretties**
@@ -201,7 +210,7 @@ class TodoApp extends Component {
             </div>
         </div>
     </div>
-    <div class="line fragment fade-in">
+    <div class="line">
         <div>
             <div class="fragment fade-in">
                 **How** to present
@@ -213,7 +222,7 @@ class TodoApp extends Component {
             </div>
         </div>
     </div>
-    <div class="line fragment fade-in">
+    <div class="line">
         <div>
             <div class="fragment fade-in">
                 Run only **UI logic**
@@ -225,7 +234,7 @@ class TodoApp extends Component {
             </div>
         </div>
     </div>
-    <div class="line fragment fade-in">
+    <div class="line">
         <div>
             <div class="fragment fade-in">
                 Have only **props** and **view state**
@@ -237,7 +246,7 @@ class TodoApp extends Component {
             </div>
         </div>
     </div>
-    <div class="line fragment fade-in">
+    <div class="line">
         <div>
             <div class="fragment fade-in">
                 **Reusable** from other components
@@ -249,7 +258,7 @@ class TodoApp extends Component {
             </div>
         </div>
     </div>
-    <div class="line fragment fade-in">
+    <div class="line">
         <div>
             <div class="fragment fade-in">
                 Known as **Presentational**
@@ -273,52 +282,63 @@ class TodoApp extends Component {
   - They only visualize data and call callbacks from `props`
 
 ```jsx
-const Todo = ({id, isDone, text, onChange}) =>
+const Todo = ({id, isDone, text, onChange}) => (
 	<label>
 		<input type="checkbox" value={id} checked={isDone} onChange={onChange} />
-		<span>
-			{text}
-		</span>
-	</label>;
+	</label>
+);
 ```
 
 ```jsx
-const TodosList = ({todos, onTodoStateChanged}) =>
+const TodosList = ({todos, onTodoStateChanged}) => (
 	<ul className="list">
-		{todos.map(todo => <Todo {...todo} onChange={onTodoStateChanged} />)}
-	</ul>;
+		{
+			todos.map(todo => (
+				<li class="list-item">
+					<Todo {...todo} onChange={onTodoStateChanged} />)
+				</li>
+			)
+		}
+	</ul>
+);
 ```
 
 <!-- slide -->
 
 # The Smart Component
 
-- Smart components are always classes
-- They control the application
-  - Show other components and stuff
-- They do not contain HTML tags
-  - Except `div`s for wrapping other components
+<ul>
+	<li>
+		Smart components are always classes
+	</li>
+	<li>
+		They control the application
+		<ul>
+			<li>
+				Show other components and stuff
+			</li>
+		</ul>
+	</li>
+	<li>
+		They do not contain HTML tags
+		<ul>
+			<li>
+				Except `div`s for wrapping other components
+			</li>
+		</ul>
+	</li>
+</ul>
 
 ```jsx
-class TodoApp {
-	state = {
-		todos: []
-	}
-
-	/** fetch todos */
-
-	handleTodoStateChanged(todo) {
-		/* handle it */
-	}
-
+class TodoApp extends Component {
+	state = { todos: [] }
+	handleTodoStateChanged(todo) { /* handle it */ }
 	render() {
 		const { todos } = this.state;
 		return (
 			<div>
 				<SiderBar />
-				<TodosList
-					todos={todos}
-					onTodoStateChanged={this.handleTodoStateChanged} />
+				<TodosList todos={todos} onTodoStateChanged={this.handleTodoStateChanged} />
 			</div>
 		)
 	}
