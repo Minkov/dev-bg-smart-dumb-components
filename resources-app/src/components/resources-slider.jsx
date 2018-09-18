@@ -16,6 +16,10 @@ class ResourcesSlider extends Component {
         handleNext: func.isRequired,
     }
 
+    handleOnKeyPress(ev) {
+        console.log(ev);
+    }
+
     renderResource() {
         const { resource } = this.props;
         const { type } = resource;
@@ -33,6 +37,7 @@ class ResourcesSlider extends Component {
             <div
               className="overlay"
               role="presentation"
+              onKeyPress={this.handleOnKeyPress}
               onClick={
                     (event) => {
                         if (isOverlay(event.target)) { onClose(); }

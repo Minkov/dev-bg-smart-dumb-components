@@ -40,7 +40,7 @@
                 15+ years in IT
                 <ul>
                     <li>
-                        8+ as a technical trainer
+                        8+ as a technical trainer & developer
                     </li>
                     <li>
                         Front-end developer by heart
@@ -52,12 +52,12 @@
                     </li>
                 </ul>
             </li>
-            <li>Experience with all popular mobile platforms
+            <li>Experience with most of JS out there
                 <ul>
-                    <li>Android, iOS, Windows</li>
+                    <li>AngularJS, Angular, React, Node.js, etc..</li>
                 </ul>
             </li>
-            <li>Fluent in Android, Node.js, Angular, Java, C++</li>
+            <li>Also Fluent in Android, .NET, Java, C++, Python</li>
             <li>Deep knowledge of Data Structures and Algorithms</li>
         </ul>
     </div>
@@ -91,13 +91,12 @@
 
 <!-- slide -->
 # Table of contents
-
-**TODO**
+- Types of components in React.js
+- Dumb and Smart components
+- Live demo
 
 <!-- slide -->
-
 # Components in React.js
-
 
 **TODO**
 The lego pieces...
@@ -175,7 +174,16 @@ class TodoApp extends Component {
 - Nothing is reusable
 
 <!-- slide -->
+# Dumb and Smart Components
 
+<!-- slide -->
+
+# Dumb and Smart Components
+- Separation of concerns
+  - Dumb **are pretty** and **do NOT make decisions**
+  - Smart **are NOT pretty** and **they do the decisions** 
+
+<!-- slide -->
 <div class="compare">
     <div class="line">
         <h3 class="title">Dumb Components</h3>
