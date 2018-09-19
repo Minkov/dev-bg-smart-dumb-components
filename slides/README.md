@@ -91,9 +91,18 @@
 
 <!-- slide -->
 # Table of contents
-- Types of components in React.js
-- Dumb and Smart components
-- Live demo
+
+<ul>
+    <li class="fragment fade-in">
+        Types of components in React.js
+    </li>
+    <li class="fragment fade-in">
+        Dumb and Smart components
+    </li>
+    <li class="fragment fade-in">
+        Live demo
+    </li>
+</ul>
 
 <!-- slide -->
 # Components in React.js
@@ -129,9 +138,6 @@ The lego pieces...
 	        Use only props
 		</li>
 		<li class="fragment fade-in">
-	        Can contain other components
-		</li>
-		<li class="fragment fade-in">
 	        Like tags in HTML
 		</li>
 	</ul>
@@ -148,20 +154,17 @@ The lego pieces...
 	}
   
 	render() {
-		return ( /* some code */)
+		return ( /\* some code \*/)
 	}
 }</code></pre>
 </div>
 <div class="column-2">
 	<ul>
 		<li class="fragment fade-in">
-			Return XML and have behavior
+			`render` method that return XML, based on state
 		</li>
 		<li class="fragment fade-in">
 			Contain the state
-		</li>
-		<li class="fragment fade-in">
-			Can contain other components
 		</li>
 		<li class="fragment fade-in">
 			Like tags in HTML, but with behavior
@@ -174,23 +177,95 @@ The lego pieces...
 # Demo
 ## Create a simple listing of elements
 
-
-<!-- slide -->
-
-# The problem
-
-- Lots of repeating code
-- Nothing is reusable
-
 <!-- slide {class="demo-slide"}-->
 # Dumb and Smart Components
 
 <!-- slide -->
 
-# Dumb and Smart Components
-- Separation of concerns
-  - Dumb **are pretty** and **do NOT make decisions**
-  - Smart **are NOT pretty** and **they do the decisions** 
+# The Dumb Component
+
+<ul>
+    <li class="fragment fade-in">
+        In most cases Dumb components are functional components
+        <ul>
+            <li class="fragment fade-in">
+                Except when holding UI state or lifecycle handlers
+            </li>
+        </ul>
+    </li>
+    <li class="fragment fade-in">
+        They have no control over the data
+        <ul>
+            <li class="fragment fade-in">
+                They only visualize data and use callbacks from `props`
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<div class="fragment fade-in">
+
+<pre><code>const Todo = ({id, isDone, text, onChange}) => (
+	<label>
+		<input type="checkbox" value={id} checked={isDone} onChange={onChange} />
+	</label>
+);</code></pre>
+</div>
+<div class="fragment fade-in">
+<pre><code>const TodosList = ({todos, onTodoStateChanged}) => (
+	<ul className="list">
+		{
+			todos.map(todo => (
+				<li class="list-item">
+					<Todo {...todo} onChange={onTodoStateChanged} />)
+				</li>
+			)
+		}
+	</ul>
+);</code></pre>
+</div>
+
+<!-- slide -->
+
+# The Smart Component
+
+<ul>
+	<li class="fragment fade-in">
+		Smart components are always classes
+	</li>
+	<li class="fragment fade-in">
+		They control the application
+		<ul>
+	<li class="fragment fade-in">
+				Show other components and stuff
+			</li>
+		</ul>
+	</li>
+	<li class="fragment fade-in">
+		They do not contain HTML tags
+		<ul>
+	<li class="fragment fade-in">
+				Except `div`s for wrapping other components
+			</li>
+		</ul>
+	</li>
+</ul>
+
+<div class="fragment fade-in">
+<pre><code>class TodoApp extends Component {
+	state = { todos: [] }
+	handleTodoStateChanged(todo) { /* handle it */ }
+	render() {
+		const { todos } = this.state;
+		return (
+			<div>
+				<SiderBar />
+				<TodosList todos={todos} onTodoStateChanged={this.handleTodoStateChanged} />
+			</div>
+		)
+	}
+}</code></pre>
+</div>
 
 <!-- slide -->
 <div class="compare">
@@ -271,79 +346,6 @@ The lego pieces...
         </div>
     </div>
 </div>
-
-<!-- slide -->
-
-# The Dumb Component
-
-- In most cases Dumb components are functional components
-  - Except when holding UI state or lifecycle handlers
-- They have no control over the data
-  - They only visualize data and call callbacks from `props`
-
-```jsx
-const Todo = ({id, isDone, text, onChange}) => (
-	<label>
-		<input type="checkbox" value={id} checked={isDone} onChange={onChange} />
-	</label>
-);
-```
-
-```jsx
-const TodosList = ({todos, onTodoStateChanged}) => (
-	<ul className="list">
-		{
-			todos.map(todo => (
-				<li class="list-item">
-					<Todo {...todo} onChange={onTodoStateChanged} />)
-				</li>
-			)
-		}
-	</ul>
-);
-```
-
-<!-- slide -->
-
-# The Smart Component
-
-<ul>
-	<li>
-		Smart components are always classes
-	</li>
-	<li>
-		They control the application
-		<ul>
-			<li>
-				Show other components and stuff
-			</li>
-		</ul>
-	</li>
-	<li>
-		They do not contain HTML tags
-		<ul>
-			<li>
-				Except `div`s for wrapping other components
-			</li>
-		</ul>
-	</li>
-</ul>
-
-```jsx
-class TodoApp extends Component {
-	state = { todos: [] }
-	handleTodoStateChanged(todo) { /* handle it */ }
-	render() {
-		const { todos } = this.state;
-		return (
-			<div>
-				<SiderBar />
-				<TodosList todos={todos} onTodoStateChanged={this.handleTodoStateChanged} />
-			</div>
-		)
-	}
-}
-```
 
 <!-- slide -->
 # Demo
