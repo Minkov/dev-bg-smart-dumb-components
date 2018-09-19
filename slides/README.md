@@ -63,26 +63,26 @@
     </div>
     <div style="position: absolute; top: 10px; right: 100px; width: 35%">
         <div style="text-align: center">
-            <img src="css/imgs/doncho-minkov.jpg" style="width: 100%; border: 0; border-radius: 5px;"/>
+            <img src="css/imgs/doncho-minkov.jpg" style="width: 100%; border: 1px solid #000; border-radius: 5px;"/>
         </div>
         <ul style="list-style-type: none; margin: 0; padding: 0; display: flex; justify-content:space-between">
             <li>
-                <a href="#" class="icon github" style="margin-right: 15px"></a>
+                <a href="https://github.com/minkov" target="_blank" class="icon github" style="margin-right: 15px"></a>
             </li>
             <li>
-                <a href="#" class="icon linkedin" style="margin-right: 15px"></a>
+                <a href="https://bg.linkedin.com/in/donchominkov"  target="_blank" class="icon linkedin" style="margin-right: 15px"></a>
             </li>
             <li>
-                <a href="#" class="icon hackerrank" style="margin-right: 15px"></a>
+                <a href="https://www.hackerrank.com/DonchoMinkov"  target="_blank" class="icon hackerrank" style="margin-right: 15px"></a>
             </li>
             <li>
-                <a href="#" class="icon leetcode" style="margin-right: 15px"></a>
+                <a href="https://leetcode.com/doncho/"  target="_blank" class="icon leetcode" style="margin-right: 15px"></a>
             </li>
             <li>
-                <a href="#" class="icon email"></a>
+                <a href="mailto:donchominkov@gmail.com"  target="_blank" class="icon email"></a>
             </li>
             <li>
-                <a href="#" class="icon www"></a>
+                <a href="http://minkov.it"  target="_blank" class="icon www"></a>
             </li>
         </ul>
     </div>
@@ -123,7 +123,7 @@
 
 <h5 class=" fragment fade-in">Function Components</h5>
 <div class="slide-columns columns-3 fragment fade-in">
-	<div class="column-1">
+	<div class="column-2">
 		<pre><code data-no-escape>const Todo = (props) => (
 	<label>
 		<input
@@ -137,7 +137,7 @@
 	</label>
 );</code></pre>
 </div>
-<div class="column-2">
+<div class="column-1">
 	<ul>
 		<li class="fragment fade-in">
 			Return only XML
@@ -386,5 +386,8 @@
             <div class="title-name">Senior full-stack developer</div>
             <div class="company">Software University</div>
         </div>
+    </div>
+    <div class="date">
+        19-Sep-2018
     </div>
 </div>
