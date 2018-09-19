@@ -107,8 +107,16 @@
 <!-- slide -->
 # Components in React.js
 
-**TODO**
-The lego pieces...
+<div style="display: flex; justify-content: space-between">
+    <img style="width: 400px; height: 300px; border: 0; box-shadow: transparent 0 0 0" src="imgs/lego-1.png" class="fragment fade-in">
+    <img style="width: 400px; height: 300px; border: 0; box-shadow: transparent 0 0 0" src="imgs/lego-2.png" class="fragment fade-in">
+    <img style="width: 400px; height: 300px; border: 0; box-shadow: transparent 0 0 0" src="imgs/lego-3.jpg" class="fragment fade-in">
+</div>
+
+<div style="display: flex; justify-content: space-around">
+    <img style="width: 400px; height: 400px; border: 0; box-shadow: transparent 0 0 0" src="imgs/lego-whole-2.jpeg" class="fragment fade-in">
+    <img style="width: 600px; height: 400px; border: 0; box-shadow: transparent 0 0 0; border-radius: 5px;" src="imgs/lego-whole-1.jpg" class="fragment fade-in">
+</div>
 
 <!-- slide -->
 # React Components
@@ -180,8 +188,7 @@ The lego pieces...
 <!-- slide {class="demo-slide"}-->
 # Dumb and Smart Components
 
-<!-- slide -->
-
+<!-- slide {style="font-size: 0.85em"} -->
 # The Dumb Component
 
 <ul>
@@ -254,7 +261,7 @@ The lego pieces...
 <div class="fragment fade-in">
 <pre><code>class TodoApp extends Component {
 	state = { todos: [] }
-	handleTodoStateChanged(todo) { /* handle it */ }
+	handleTodoStateChanged(todo) { /\* handle it \*/ }
 	render() {
 		const { todos } = this.state;
 		return (
