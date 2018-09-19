@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 
-import ResourcesApp from './components/resources-app';
+import TodosApp from './components/todos-app';
 
 const App = () => (
     <div>
-        <ResourcesApp />
+        <TodosApp />
     </div>
 );
 
