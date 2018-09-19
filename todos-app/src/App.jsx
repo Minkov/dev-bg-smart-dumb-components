@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
-
 import TodosApp from './components/todos-app';
+
+import './App.css';
 
 const App = () => (
     <div>

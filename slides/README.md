@@ -358,13 +358,10 @@
 # Demo
 
 - Creating application using the Dumb Smart principle
-  1. List resources
-  2. When a resource is clicked, show it in full screen
-  3. When is full screen, show prev/next buttons
-
-<br/>
-
-**TODO: ** Insert picture
+  1. List TODOs by filter (done, not done)
+  2. Search TODOs by name
+  3. Mark TODO as done or not done
+  4. Create TODO
 
 
 <!-- slide {class="title-slide"} -->
