@@ -368,7 +368,7 @@
 
 # Demo and Slides
 
-[Slides](https://rawgit.com/Minkov/dev-bg-smart-dumb-components/master/slides/index.html)
+[Slides](https://cdn.rawgit.com/Minkov/dev-bg-smart-dumb-components/9dd97455/slides/index.html)
 [Demo](https://github.com/Minkov/dev-bg-smart-dumb-components)
 
 
