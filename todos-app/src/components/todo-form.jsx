@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
-import { func } from 'prop-types';
+import { func, string } from 'prop-types';
 
 class TodoForm extends Component {
-    static propTypes = { onSave: func.isRequired };
+    static propTypes = {
+        onSave: func.isRequired,
+        hint: string,
+    };
+
+    static defaultProps = { hint: '' };
 
     constructor() {
         super();
@@ -24,6 +29,7 @@ class TodoForm extends Component {
 
     render() {
         const { text } = this.state;
+        const { hint } = this.props;
         return (
             <div>
                 <label htmlFor="todo-text">
@@ -31,6 +37,7 @@ class TodoForm extends Component {
                       type="text"
                       onChange={this.handleOnTextChanged}
                       value={text}
+                      placeholder={hint}
                     />
                 </label>
                 <button

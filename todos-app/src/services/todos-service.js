@@ -1,5 +1,6 @@
 const TODOS_KEY = 'todos-key';
 const findByIdFunc = id => todo => todo.id === id;
+const containsPattern = pattern => todo => todo.text.toLowerCase().includes(pattern);
 
 class TodosService {
     constructor() {
@@ -8,6 +9,11 @@ class TodosService {
 
     async getAll() {
         return JSON.parse(this.storage.getItem(TODOS_KEY) || '[]');
+    }
+
+    async getFiltered(pattern) {
+        const todos = await this.getAll();
+        return todos.filter(containsPattern(pattern));
     }
 
     async getById(id) {
@@ -25,8 +31,20 @@ class TodosService {
     async add(todo) {
         const todos = await this.getAll();
         const id = Math.max(todos.map(t => t.id)) + 1;
-        const { text } = todo;
-        todos.push({ id, text });
+        const {
+            text
+        } = todo;
+        todos.push({
+            id,
+            text,
+        });
+        this._updateStorage(todos);
+    }
+
+    async delete(todo) {
+        const todos = await this.getAll();
+        const index = todos.findIndex(findByIdFunc(todo.id));
+        todos.splice(index, 1);
         this._updateStorage(todos);
     }
 

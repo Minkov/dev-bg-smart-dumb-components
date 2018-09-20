@@ -8,9 +8,20 @@ const todoShape = {
 };
 
 class TodoItem extends Component {
-    handleOnChanged = () => {
+    constructor() {
+        super();
+        this.handleOnChanged = this.handleOnChanged.bind(this);
+        this.handleOnDelete = this.handleOnDelete.bind(this);
+    }
+
+    handleOnChanged() {
         const { todo, onStateChanged } = this.props;
         onStateChanged(todo);
+    }
+
+    handleOnDelete() {
+        const { todo, onTodoDeleted } = this.props;
+        onTodoDeleted(todo);
     }
 
     render() {
@@ -18,23 +29,34 @@ class TodoItem extends Component {
         const { id, text, isDone } = todo;
         const todoCheckboxId = `cb-todo-${id}`;
         return (
-            <label htmlFor={todoCheckboxId}>
-                <input
-                  id={todoCheckboxId}
-                  type="checkbox"
-                  checked={isDone}
-                  onChange={this.handleOnChanged}
-                />
-                {text}
-            </label>
+            <div>
+                <label htmlFor={todoCheckboxId}>
+                    <input
+                      id={todoCheckboxId}
+                      type="checkbox"
+                      checked={isDone}
+                      onChange={this.handleOnChanged}
+                    />
+                    {text}
+                </label>
+                <button
+                  type="button"
+                  onClick={this.handleOnDelete}
+                >
+                    x
+                </button>
+            </div>
         );
     }
 }
 
 TodoItem.propTypes = {
-    onStateChanged: func.isRequired,
     todo: shape(todoShape).isRequired,
+    onStateChanged: func.isRequired,
+    onTodoDeleted: func,
 };
+
+TodoItem.defaultProps = { onTodoDeleted() { } };
 
 export default TodoItem;
 
