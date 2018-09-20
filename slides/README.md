@@ -364,6 +364,14 @@
   4. Create TODO
 
 
+<!-- slide -->
+
+# Demo and Slides
+
+[Slides](https://rawgit.com/Minkov/dev-bg-smart-dumb-components/master/slides/index.html)
+[Demo](https://github.com/Minkov/dev-bg-smart-dumb-components)
+
+
 <!-- slide {class="title-slide"} -->
 <div class="title">
     <h1>Questions</h1>
